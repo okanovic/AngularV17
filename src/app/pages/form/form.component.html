@@ -1,171 +1,59 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-  <app-input
-    label="Username"
-    name="username"
-    [control]="myForm.get('userName')"
-    placeholder="{{ 'Username' }}"
-    [required]="true"
-  ></app-input>
-  <app-input
-    label="Email"
-    name="email"
-    [control]="myForm.get('email')"
-    placeholder="{{ 'EMail' }}"
-    [required]="true"
-  ></app-input>
-  <app-input
-    label="Phone"
-    name="phone"
-    [control]="myForm.get('phone')"
-    placeholder="{{ 'Phone' }}"
-    [required]="true"
-  ></app-input>
-
-  <!-- Diğer form elemanları... -->
-
-  <button type="submit" [disabled]="myForm.invalid">Submit</button>
-</form>
-<pre>{{ myForm.value | json }}</pre>
-
-<div class="flex items-center justify-center p-12">
-  <!-- Author: FormBold Team -->
-  <!-- Learn More: https://formbold.com -->
-  <div class="mx-auto w-full max-w-[550px] bg-white">
-    <form action="https://formbold.com/s/FORM_ID" method="POST">
-      <div class="">
-        <label
-          for="name"
-          class="mb-3 block text-base font-medium text-[#07074D]"
-        >
-          Full Name
-        </label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Full Name"
-          class="inputField"
-        />
+<div class="flex items-center justify-start p-12">
+  <div class="w-full max-w-[550px] bg-white">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <div class="mb-5">
+        <app-input
+          label="Username"
+          name="username"
+          [control]="myForm.get('userName')"
+          placeholder="{{ 'Username' }}"
+          [required]="true"
+        ></app-input>
       </div>
       <div class="mb-5">
-        <label
-          for="phone"
-          class="mb-3 block text-base font-medium text-[#07074D]"
-        >
-          Phone Number
-        </label>
-        <input
-          type="text"
-          name="phone"
-          id="phone"
-          placeholder="Enter your phone number"
-          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-        />
-      </div>
-      <div class="mb-5">
-        <label
-          for="email"
-          class="mb-3 block text-base font-medium text-[#07074D]"
-        >
-          Email Address
-        </label>
-        <input
-          type="email"
+        <app-input
+          label="Email"
           name="email"
-          id="email"
-          placeholder="Enter your email"
-          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-        />
+          [control]="myForm.get('email')"
+          placeholder="{{ 'EMail' }}"
+          [required]="true"
+        ></app-input>
+      </div>
+      <div class="mb-5">
+        <app-input
+          label="Phone"
+          name="phone"
+          [control]="myForm.get('phone')"
+          placeholder="{{ 'Phone' }}"
+          [required]="true"
+        ></app-input>
       </div>
       <div class="-mx-3 flex flex-wrap">
         <div class="w-full px-3 sm:w-1/2">
           <div class="mb-5">
-            <label
-              for="date"
-              class="mb-3 block text-base font-medium text-[#07074D]"
-            >
-              Date
-            </label>
-            <input
-              type="date"
-              name="date"
-              id="date"
-              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-            />
+            <app-input
+            type="{{'date'}}"
+            label="Date"
+            name="date"
+            [control]="myForm.get('date')"
+            placeholder="{{ 'Date' }}"
+            [required]="false"
+          ></app-input>
           </div>
         </div>
         <div class="w-full px-3 sm:w-1/2">
           <div class="mb-5">
-            <label
-              for="time"
-              class="mb-3 block text-base font-medium text-[#07074D]"
-            >
-              Time
-            </label>
-            <input
-              type="time"
-              name="time"
-              id="time"
-              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-            />
+            <app-input
+            type="{{'time'}}"
+            label="Time"
+            name="time"
+            [control]="myForm.get('time')"
+            placeholder="{{ 'Time' }}"
+            [required]="false"
+          ></app-input>
           </div>
         </div>
       </div>
-
-      <div class="mb-5 pt-3">
-        <label
-          class="mb-5 block text-base font-semibold text-[#07074D] sm:text-xl"
-        >
-          Address Details
-        </label>
-        <div class="-mx-3 flex flex-wrap">
-          <div class="w-full px-3 sm:w-1/2">
-            <div class="mb-5">
-              <input
-                type="text"
-                name="area"
-                id="area"
-                placeholder="Enter area"
-                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-              />
-            </div>
-          </div>
-          <div class="w-full px-3 sm:w-1/2">
-            <div class="mb-5">
-              <input
-                type="text"
-                name="city"
-                id="city"
-                placeholder="Enter city"
-                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-              />
-            </div>
-          </div>
-          <div class="w-full px-3 sm:w-1/2">
-            <div class="mb-5">
-              <input
-                type="text"
-                name="state"
-                id="state"
-                placeholder="Enter state"
-                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-              />
-            </div>
-          </div>
-          <div class="w-full px-3 sm:w-1/2">
-            <div class="mb-5">
-              <input
-                type="text"
-                name="post-code"
-                id="post-code"
-                placeholder="Post Code"
-                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div>
         <button
           class="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
@@ -173,6 +61,7 @@
           Book Appointment
         </button>
       </div>
+      <pre class="mt-4">{{ myForm.value | json }}</pre>
     </form>
   </div>
 </div>

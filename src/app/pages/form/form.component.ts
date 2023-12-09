@@ -31,6 +31,8 @@ export class FormComponent implements OnInit {
       userName: ['', Validators.required],
       email: ['', Validators.required],
       phone: ['', Validators.required],
+      date: [''],
+      time: [''],
       // Diğer form kontrol alanları...
     });
   }
