@@ -5,13 +5,9 @@ import { LayoutComponent } from './layout.component';
 import { FormComponent } from '../../pages/form/form.component';
 
 const routes: Routes = [
-  /*     {
-            path: '',
-            component: LayoutComponent,
-            children: [ */
   { path: 'form', component: FormComponent },
-  /*     ],
-    }, */
+  { path: '**', component: FormComponent },  // Wildcard route for a 404 page
+
 ];
 
 @NgModule({

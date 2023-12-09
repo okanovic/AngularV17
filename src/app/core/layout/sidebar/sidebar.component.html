@@ -1,0 +1,42 @@
+<div class="sidebar" id="sidebar">
+    <div class="flex items-center p-4 border-b border-gray-light">
+        <img src="https://placehold.co/40x40" alt="" class="rounded-full mr-2">
+        <div class="flex flex-col">
+            <span class="text-base font-semibold">SoftwareCord</span>
+            <span class="text-sm text-gray">Technology</span>
+        </div>
+    </div>
+    <ul class="py-2 menu">
+        @for (menu of menuList; track menu.name) {
+        <li class="p-2">
+            <div class="flex items-center cursor-pointer" routerLink="{{menu.route}}" routerLinkActive="active" (click)="menu.isOpen = !menu.isOpen">
+                @if (menu.subMenus && menu.subMenus.length) {
+                    <img [src]="menu.isOpen ? './assets/svg/down-arrow.svg' : './assets/svg/right-arrow.svg'" alt="SVG Image" width="15" class="fill-current text-blue">
+                }
+                <img [src]="menu.icon" alt="SVG Image" width="25" class="ml-1">
+                <span class="text-sm ml-3">{{menu.name}}</span>
+            </div>
+            @if (menu.subMenus && menu.subMenus.length) {
+            <ul class="flex flex-col sub-menu">
+                @for (subMenu of menu.subMenus; track $index) {
+                @if (menu.isOpen) {
+                    <div class="my-1">
+                        <li class="flex items-center ml-6 cursor-pointer">
+                            <a class="text-sm" routerLink="{{subMenu.route}}" routerLinkActive="active">{{subMenu.name}}</a>
+                        </li>
+                    </div>
+                 }
+                }
+            </ul>
+            }
+        </li>
+        } @empty {
+        <li> There are no items. </li>
+        }
+    </ul>
+
+    <div class="flex items-center space-x-2 p-2 absolute bottom-0">
+        <img src="./assets/svg/settings.svg" alt="SVG Image" width="25" class="fill-current text-orange">
+        <span class="text-sm">Settings</span>
+    </div>
+</div>

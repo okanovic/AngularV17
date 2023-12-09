@@ -1,0 +1,21 @@
+.sidebar {
+    height: 100vh;
+    background-color: #0F141F;
+    .menu {
+        li {
+            color: #898D94;
+            .sub-menu{
+                li{
+                    padding: 5px 12px;
+                    margin: 5px 0 0 20px;
+                }
+            }
+        }
+    }
+
+}
+
+svg circle {
+    fill: red;
+    /* Tüm elemanların rengini değiştirin */
+}
