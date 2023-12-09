@@ -1,15 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  FormGroup,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { FormElementsModule } from '../../components/form-elements/form-elements.module';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormElementsModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    FormElementsModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.scss'
+  styleUrl: './form.component.scss',
 })
 export class FormComponent implements OnInit {
   myForm: FormGroup;
@@ -23,10 +35,7 @@ export class FormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onSubmit(){
-
-  }
+  onSubmit() {}
 }

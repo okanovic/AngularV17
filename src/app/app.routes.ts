@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    {
-        path: "",
-        loadChildren: () =>
-            import("./core/layout/layout.module").then((m) => m.LayoutModule),
-    },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./core/layout/layout.module').then((m) => m.LayoutModule),
+  },
 ];

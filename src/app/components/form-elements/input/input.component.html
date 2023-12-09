@@ -1,14 +1,14 @@
-<div>
-    <label for="{{ name }}">{{ label }}</label>
-    <input
-      [type]="type"
-      [id]="name"
-      [name]="name"
-      [placeholder]="placeholder"
-      [formControl]="control"
-      [(ngModel)]="value"
-      [disabled]="disabled"
-      [required]="required"
-      class="border rounded p-2"
-    />
-  </div>
+<div class="input-field">
+  <label for="{{ name }}">{{ label }}</label>
+  <input
+    [type]="type"
+    [id]="name"
+    [name]="name"
+    [placeholder]="placeholder"
+    [formControl]="control"
+    [(ngModel)]="value"
+    [disabled]="disabled"
+    [required]="required"
+    class="border rounded p-2"
+  />
+</div>

@@ -1,10 +1,28 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <app-input label="Username" name="username" [control]="myForm.get('userName')" [required]="true"></app-input>
-    <app-input label="Email" name="email" [control]="myForm.get('email')" [required]="true"></app-input>
-    <app-input label="Phone" name="phone" [control]="myForm.get('phone')" [required]="true"></app-input>
+  <app-input
+    label="Username"
+    name="username"
+    [control]="myForm.get('userName')"
+    placeholder="{{ 'Username' }}"
+    [required]="true"
+  ></app-input>
+  <app-input
+    label="Email"
+    name="email"
+    [control]="myForm.get('email')"
+    placeholder="{{ 'EMail' }}"
+    [required]="true"
+  ></app-input>
+  <app-input
+    label="Phone"
+    name="phone"
+    [control]="myForm.get('phone')"
+    placeholder="{{ 'Phone' }}"
+    [required]="true"
+  ></app-input>
 
-    <!-- Diğer form elemanları... -->
+  <!-- Diğer form elemanları... -->
 
-    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
 </form>
-<pre>{{myForm.value | json}}</pre>
+<pre>{{ myForm.value | json }}</pre>
