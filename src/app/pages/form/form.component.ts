@@ -17,6 +17,8 @@ export class FormComponent implements OnInit {
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
       userName: ['', Validators.required],
+      email: ['', Validators.required],
+      phone: ['', Validators.required],
       // Diğer form kontrol alanları...
     });
   }
