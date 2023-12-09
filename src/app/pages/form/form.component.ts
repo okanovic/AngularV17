@@ -33,6 +33,7 @@ export class FormComponent implements OnInit {
       phone: ['', Validators.required],
       date: [''],
       time: [''],
+      job: ['student'],
       // Diğer form kontrol alanları...
     });
   }

@@ -32,27 +32,42 @@
         <div class="w-full px-3 sm:w-1/2">
           <div class="mb-5">
             <app-input
-            type="{{'date'}}"
-            label="Date"
-            name="date"
-            [control]="myForm.get('date')"
-            placeholder="{{ 'Date' }}"
-            [required]="false"
-          ></app-input>
+              type="{{ 'date' }}"
+              label="Date"
+              name="date"
+              [control]="myForm.get('date')"
+              placeholder="{{ 'Date' }}"
+              [required]="false"
+            ></app-input>
           </div>
         </div>
         <div class="w-full px-3 sm:w-1/2">
           <div class="mb-5">
             <app-input
-            type="{{'time'}}"
-            label="Time"
-            name="time"
-            [control]="myForm.get('time')"
-            placeholder="{{ 'Time' }}"
-            [required]="false"
-          ></app-input>
+              type="{{ 'time' }}"
+              label="Time"
+              name="time"
+              [control]="myForm.get('time')"
+              placeholder="{{ 'Time' }}"
+              [required]="false"
+            ></app-input>
           </div>
         </div>
+      </div>
+      <div class="mb-5">
+        <app-select
+          label="Which option best describes you?"
+          name="occupation"
+          id="occupation"
+          [control]="myForm.get('job')"
+          [selectedOption]="myForm.get('job')?.value"
+          [options]="[
+            { value: 'student', label: 'Student' },
+            { value: 'designer', label: 'UX/UI Designer' },
+            { value: 'fullstack', label: 'Full Stack Developer' },
+            { value: 'frontend', label: 'Front End Developer' }
+          ]"
+        ></app-select>
       </div>
       <div>
         <button
