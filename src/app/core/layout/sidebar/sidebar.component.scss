@@ -1,21 +1,24 @@
 .sidebar {
     height: 100vh;
     background-color: #0F141F;
+    color: #d1d5db;
     .menu {
+        margin-top: 20px;
         li {
-            color: #898D94;
+            transition: .3s all;
+            &:hover{
+                background-color: #6a64f180;
+                //border: 1px solid rgba(9, 14, 23, 0.663)
+                border-radius: 10px;
+            }
             .sub-menu{
+                background-color: #0c0e13;
                 li{
-                    padding: 5px 12px;
-                    margin: 5px 0 0 20px;
+                    padding: 10px 12px;
+                    margin: 5px 0 5px 30px;
                 }
             }
         }
     }
 
-}
-
-svg circle {
-    fill: red;
-    /* Tüm elemanların rengini değiştirin */
 }
